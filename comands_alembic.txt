@@ -1,0 +1,78 @@
+Ejecutar Proyecto
+
+python main.py --- sin cache --- python -b main.py
+
+Explicacion los comandos esenciales para gestionar migraciones en bases de datos SQLAlchemy.
+
+Esto crea la carpeta `migrations/` donde se guardarán las migraciones y genera los archivos `env.py` y `alembic.ini`.
+
+1. Crear una nueva migración
+Las migraciones permiten guardar cambios en la estructura de la base de datos.
+
+    alembic revision --autogenerate -m "Añadiendo tabla usuarios"
+
+- `--autogenerate` detecta automáticamente cambios en los modelos SQLAlchemy.
+- `-m "Descripción"` añade una nota sobre la migración.
+
+Si deseas crear una migración manual:
+
+    alembic revision -m "Nueva tabla productos"
+
+2. Aplicar migraciones
+Para aplicar los cambios en la base de datos:
+
+    alembic upgrade head
+
+Si quieres aplicar una migración específica:
+
+    alembic upgrade <revision_id>
+
+Ejemplo:
+
+    alembic upgrade 420bc5e06022  # Aplica una versión concreta
+
+3. Revertir migraciones
+Si necesitas deshacer la última migración:
+
+    alembic downgrade -1
+
+Para regresar a una versión específica:
+
+    alembic downgrade <revision_id>
+
+Ejemplo:
+
+    alembic downgrade 15a73f03204c
+
+4. Ver el historial de migraciones
+Si quieres ver qué migraciones se han realizado:
+
+    alembic history
+
+Esto lista todas las migraciones en orden de ejecución.
+
+5. Mostrar la versión actual
+Para ver la versión aplicada en la base de datos:
+
+    alembic current
+
+6. Borrar y rehacer todas las migraciones
+Si deseas borrar la base de datos y reconstruir todo desde cero:
+
+    alembic downgrade base
+    alembic upgrade head
+
+Ejemplo:
+
+    alembic downgrade base
+    alembic revision --autogenerate -m "Reinicio del esquema"
+    alembic upgrade head
+
+7. Mostrar ayuda de Alembic
+Si necesitas consultar los comandos disponibles:
+
+    alembic --help
+
+8. Generar SQL apartir de migraciones
+
+    alembic upgrade head --sql > script.sql

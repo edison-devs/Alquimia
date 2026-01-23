@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+build/
+
+# Archivos de entorno virtual
+venv/
+.env
+
+# Configuración de editores
+.idea/
+.vscode/
+commands.py
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+#Base de datos
+Alquimia.db
