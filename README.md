@@ -68,4 +68,14 @@ El archivo `runner.py` centraliza la ejecución de tareas comunes:
 - `config/`: Configuraciones de base de datos y esquemas.
 - `migrations/`: Historial de cambios en la base de datos (Alembic).
 
+
+## 📚 Documentación
+
+En la carpeta `docs/` encontrarás guías detalladas:
+
+- **[🏠 Arquitectura](docs/ARCHITECTURE.md)**: Estructura técnica y patrones.
+- **[🗄️ Base de Datos](docs/DATABASE.md)**: Modelos core (User, Rol, Session).
+- **[👨‍💻 Guía de Desarrollador](docs/DEVELOPER.md)**: Cómo extender la plantilla.
+- **[📖 Manual de Usuario](docs/USER_MANUAL.md)**: Uso básico del sistema.
+
 Para más detalles técnicos, consulta [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
