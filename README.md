@@ -1,5 +1,7 @@
 # Alquimia Backend Template
 
+![Alquimia Icon](docs/icon.jpg)
+
 Este proyecto es una base estándar de backend escrita en Python utilizando SQLAlchemy como ORM. Ha sido simplificado para servir como una plantilla base que incluye la gestión esencial de usuarios, roles y sesiones.
 
 ## Características Principales
